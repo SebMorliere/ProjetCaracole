@@ -1,0 +1,14 @@
+<div class="container cleafix">
+    <div class="pull-right">
+        <p></p>
+        #{if controllers.secure.Security.isConnected()}
+        <a href="@{secure.Secure.logout()}" class="btn btn-warning"><span class="glyphicon glyphicon-log-out"/></a>
+        #{/if}
+        #{else}
+        <a href="@{secure.Secure.login()}" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"/></a>
+        #{/else}
+    </div>
+</div>
+
+
+<h1>: ${flash.get("success")}</h1>

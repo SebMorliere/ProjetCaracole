@@ -1,0 +1,6 @@
+# Application dependencies
+
+require:
+    - play
+    - com.google.guava -> guava 19.0
+    - org.mindrot -> jbcrypt 0.3m

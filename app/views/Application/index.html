@@ -1,0 +1,35 @@
+#{extends 'main.html' /}
+#{set title:'Caracole' /}
+
+<div class="container">
+    <h1>Web app - Caracole</h1>
+    <div class="container">
+        #{if flash.get("success") != null && flash.get("success") != ""}
+        <p class="alert alert-success">${flash.get("success")}</p>
+        #{/if}
+        #{if flash.get("error") != null && flash.get("error") != ""}
+        <p class="alert alert-warning">${flash.get("error")}</p>
+        #{/if}
+    </div>
+    <div class="container btn-group">
+        <a class="btn btn-primary" href="@{Application.generateDeck()}" title="generate deck">
+            Générer le deck de caracole
+        </a>
+        <a class="btn btn-primary" href="@{Application.getDeck()}" title="get deck">
+            Voir le deck généré
+        </a>
+        <a class="btn btn-default" href="@{Application.clearDeck()}" title="clear deck">
+            Effacer le deck
+        </a>
+    </div>
+    <br>
+    <br>
+    <div class="container btn-group">
+        <a class="btn btn-primary" href="#">
+            Se connecter
+        </a>
+        <a class="btn btn-default" href="@{Application.newCompte()}" title="create compte">
+            Créer un compte
+        </a>
+    </div>
+</div>

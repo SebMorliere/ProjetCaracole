@@ -1,0 +1,27 @@
+#{extends 'main.html' /}
+#{set title:'Caracole' /}
+
+<div class="container">
+    <h1>Web app - Caracole</h1>
+    <h3>Cartes du deck :</h3>
+    <div class="container">
+        <a href="@{Application.index}" class="btn btn-primary">Retour</a>
+        <ul class="list-group">
+            #{list deck, as: 'carte'}
+            <li class="list-group-item">
+                #{if carte.enseigne.getCouleur() == "rouge"}
+                ${carte.valeur.getNom()} de ${carte.enseigne.getEnseigne()} : <span class="font-card card-red">&#x${carte.enseigne.getUnicodePre()}${carte.valeur.getUnicodePost()}</span>
+                #{/if}
+                #{else}
+                ${carte.valeur.getNom()} de ${carte.enseigne.getEnseigne()} : <span class="font-card card-black">&#x${carte.enseigne.getUnicodePre()}${carte.valeur.getUnicodePost()}</span>
+                #{/else}
+            </li>
+            #{/list}
+            #{else}
+            <li class="list-group-item">
+                <i>deck non généré !</i>
+            </li>
+            #{/else}
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'Caracole - création de compte' /}
+
+<div class="container">
+    <h1>Web app - Caracole</h1>
+    <div class="container">
+        #{if flash.get("success") != null && flash.get("success") != ""}
+        <p class="alert alert-success">${flash.get("success")}</p>
+        #{/if}
+        #{if flash.get("error") != null && flash.get("error") != ""}
+        <p class="alert alert-warning">${flash.get("error")}</p>
+        #{/if}
+    </div>
+    <form action="@{Application.createCompte()}" method="post">
+        <h2>Créer un compte</h2>
+        <p><label>Pseudo :</label><input type="text" name="pseudo"><span class="error">#{error 'pseudo' /}</span></p>
+        <p><label>Email :</label><input type="email" name="email"><span class="error">#{error 'email' /}</span></p>
+        <p><label>Mot de passe :</label><input type="password" name="mdp"><span class="error">#{error 'motDePasse' /}</span></p>
+        <p><input type="submit" value="Créer"><a href="@{Application.index()}">Annuler</a></p>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+@font-face {
+    font-family: LastResort;
+    src: url('/public/fonts/LastResort.ttf');
+}
+
+@font-face {
+    font-family: Symbola;
+    src: url('/public/fonts/Symbola.ttf');
+}
+
+.font-card {
+    font-family: Symbola;
+    font-size: 450%;
+}
+
+.card-red {
+    color: red;
+}
+
+.card-black {
+    color: black;
+}
