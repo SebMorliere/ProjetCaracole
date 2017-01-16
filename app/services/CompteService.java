@@ -49,7 +49,7 @@ public class CompteService {
                 Compte compte = new Compte();
                 compte.email = email;
                 compte.mdp = mdp;
-                if (pseudo == null) {
+                if (Strings.isNullOrEmpty(pseudo)) {
                     compte.pseudo = email;
                 } else {
                     compte.pseudo = pseudo;
@@ -84,14 +84,7 @@ public class CompteService {
     }
 
     public static List<Compte> findComptes(){
-        Logger.info("findComptes: {}");
-
-        Session session = HibernateUtils.getSession();
-        Query query = session.createQuery("FROM Compte");
-        List<Compte> comptes = query.list();
-        session.close();
-
-        return comptes;
+        return findComptes(true);
     }
 
     public static List<Compte> findComptes(boolean isValidated) {
