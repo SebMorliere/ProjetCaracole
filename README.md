@@ -1,8 +1,11 @@
 # Projet caracole : jeu de carte multijoueur en ligne
 
 ----
-## Règle du jeu
+## Objectifs du projet :
+Crée une plateforme de jeu en ligne pour jouer à deux ou plusieurs amis au Caracole.
 
+----
+## Règle du jeu
 Le jeu de caracole se joue de 2 à 5 joueurs.
 Chaque joueur démarre avec 7 cartes en main, puis échange chacun leur tour une ou plusieurs de ses cartes (selon les combinaisons possibles) avec celle au dessus de la défausse ou de la pioche. La manche se termine lorsqu'un joueur atteint 10 points ou moins en main. Les autres joueurs ajoutent alors leur points en main à leur score. La partie se termine lorsqu'il ne reste plus qu'un joueur avec un score de moins de 100 points, il gagne alors la partie.
 
